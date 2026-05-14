@@ -1,0 +1,16 @@
+.landing_page_main_div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 80px;
+  padding: 40px 0;
+
+  @media all and (max-width: 991px) {
+    gap: 40px;
+  }
+  @media all and (max-width: 576px) {
+    gap: 20px;
+    padding: 20px 0;
+  }
+}

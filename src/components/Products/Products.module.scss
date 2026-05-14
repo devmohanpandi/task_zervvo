@@ -1,0 +1,198 @@
+.wrapper {
+  padding: 0 40px;
+  background: transparent;
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 40px;
+
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+  }
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  input,
+  select {
+    height: 46px;
+    min-width: 220px;
+    padding: 0 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    background: var(--bg-input);
+    color: var(--text);
+    outline: none;
+    font-size: 14px;
+  }
+
+  input::placeholder {
+    color: #94a3b8;
+  }
+
+  select {
+    cursor: pointer;
+    option {
+      color: var(--card);
+    }
+  }
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  overflow: hidden;
+  border-radius: 24px;
+  background: transparent;
+  border: 1px solid var(--border);
+  transition: 0.5s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 220px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease;
+  }
+}
+
+.cardBody {
+  padding: 20px;
+
+  button {
+    width: 100%;
+    height: 46px;
+    margin-top: 20px;
+    border: 1px solid var(--text-muted);
+    border-radius: 12px;
+    background: transparent;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+      background 0.4s ease,
+      border-color 0.4s ease,
+      transform 0.3s ease;
+
+    &:hover {
+      background: var(--btn-gradient);
+      border-color: transparent;
+      transform: translateY(-2px);
+      color: #000;
+    }
+  }
+}
+
+.cardTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  span {
+    padding: 6px 10px;
+    border-radius: 30px;
+    background: var(--bg-color-1);
+    color: var(--text-color-1);
+    font-size: 12px;
+  }
+}
+
+.cardBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  p {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-secondary);
+  }
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  svg {
+    color: var(--bg-color-2);
+  }
+
+  span {
+    color: var(--text-color-1);
+  }
+}
+
+@media (max-width: 992px) {
+  .topBar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .filters {
+    width: 100%;
+    flex-wrap: wrap;
+
+    input,
+    select {
+      flex: 1;
+      min-width: 100%;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .wrapper {
+    padding: 20px;
+  }
+
+  .topBar {
+    margin-bottom: 25px;
+
+    h1 {
+      font-size: 26px;
+    }
+  }
+
+  .productGrid {
+    gap: 18px;
+  }
+
+  .imageWrapper {
+    height: 200px;
+  }
+}
